@@ -20,4 +20,10 @@ public class BasketTest {
         basket.add(product, price);
         Assertions.assertFalse(basket.add(product, price));
     }
+
+    @Test
+    public void emptyBasketShouldHaveZeroTotal() {
+        Basket basket = new Basket();
+        Assertions.assertEquals(basket.total(), 0);
+    }
 }
