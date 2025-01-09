@@ -14,4 +14,8 @@ public class Basket {
         items.put(product, price);
         return true;
     }
+
+    public int total() {
+        return 0;
+    }
 }
