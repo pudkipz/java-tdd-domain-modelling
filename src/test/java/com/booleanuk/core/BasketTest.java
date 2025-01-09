@@ -24,6 +24,15 @@ public class BasketTest {
     @Test
     public void emptyBasketShouldHaveZeroTotal() {
         Basket basket = new Basket();
-        Assertions.assertEquals(basket.total(), 0);
+        Assertions.assertEquals(0, basket.total());
+    }
+
+    @Test
+    public void correctCostOfSingleItem() {
+        Basket basket = new Basket();
+        String product = "eggs";
+        int price = 20;
+        basket.add(product, price);
+        Assertions.assertEquals(price, basket.total());
     }
 }
