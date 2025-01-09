@@ -11,4 +11,13 @@ public class BasketTest {
         int price = 20;
         Assertions.assertTrue(basket.add(product, price));
     }
+
+    @Test
+    public void cannotAddExistingItem() {
+        Basket basket = new Basket();
+        String product = "eggs";
+        int price = 20;
+        basket.add(product, price);
+        Assertions.assertFalse(basket.add(product, price));
+    }
 }
