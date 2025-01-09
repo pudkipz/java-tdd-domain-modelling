@@ -7,15 +7,19 @@ public class Basket {
     Map<String, Integer> items = new HashMap<>();
 
     public boolean add(String product, int price) {
-        if (items.containsKey(product)) {
+        if (this.items.containsKey(product)) {
             return false;
         }
 
-        items.put(product, price);
+        this.items.put(product, price);
         return true;
     }
 
     public int total() {
-        return 0;
+        int total = 0;
+        for (int price : this.items.values()) {
+            total += price;
+        }
+        return total;
     }
 }
